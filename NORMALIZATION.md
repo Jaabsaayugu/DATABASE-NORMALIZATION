@@ -27,52 +27,69 @@
 
  ### TYPES OF ANORMALIES
 1. Update anomalies
-2. Insertion anomalies
-3. Deletion anomalies
+1. Insertion anomalies
+1. Deletion anomalies
 
 #### Update Anomalies
 -  This maybe as a result of data being updated partially and other fail  to be updated in multiple places hence when a query is made, different answers respond to the same query.
+<br></br>
+![update](./Update-Anomaly.jpg)
 
 #### Insertion Anomalies
 - This is finding trouble in adding new records to a table because of how data has been structured.
+<br></br>
+![insertion](./InsertAnomaly.jpg)
 
 #### Deletion Anomalies
 - This is when if you delete data holding one fact leads to deletion of data holding another fact.
+<br></br>
+![deletion](./Deletion-Anomaly.webp)
     
-> N/B -  You should be able to add new types of data to a database without changing its structure too much. Otherwise, each change in structure could potentially break existing applications that interact with the database.
+> `N/B` -  You should be able to add new types of data to a database without changing its structure too much. Otherwise, each change in structure could potentially break existing applications that interact with the database.
 
 ## THE NORMALIZATION FORMS
 ### First Normalization Form
-* Every record/row must be unique
-* Each cell contains only one value
-
+1.  Every record/row must be unique
+1. Each cell contains only one value
+<br></br>
+![1NF](FirstNormalFormDataExample-1.webp)
 ### Second Normalization Form
 * Ensure that the table is in 1NF
 *  All attributes ( columns that are keys) are dependent on the primary keys. This means that if you have columns that are related to each other or to data but not the primary key, then they belong to a different table.
+<br></br>
+![2NF](SecondNormalFormSampleData1.png)
+<br></br>
+![2NF](2NF%20DATA%202.png)
+<br></br>
+![2NF](SecondNormalFormSampleData3.png)
 
 ### Third Normalization Form
-* Ensure that the table is in 2NF
+* Ensure that the table is in `2NF`
 *All columns can be determined only by the key in the table and not by any other column.
 * If such an entity exists, move it outside into a new table.
+<br></br>
+![3NF image](ThirdNormalFormSampleData1.png)
+<br></br>
+![3NF](ThirdNormalFormSampleData2.png)
 
 ### Boyce-Codd Normal Form
 *  Is a type of normalization which removes all redundancies based on functional dependencies
 *  It is a slightly stricter version of the third normal form (3NF)
 
 ### Forth Normalization Form
-* Ensure that the table is in BCNF
+* Ensure that the table is in `BCNF`
 * It doesn't allow any multi-valued dependencies. Rather than storing multi-valued dependencies on one table, they are put each in their own tables.
 
 ### Fifth Normalization Form
-* Ensure that the table is in 4NF
+* Ensure that the table is in `4NF`
 * It doesn't  join dependencies that are not implied by the candidate keys. This ensures that the table cannot be decomposed further without losing information..
 
 
-> N/B - Higher normal forms beyond 3NF are mainly of academic interest and are rarely applied in practice due to potential performance issues.
+> `N/B` - Higher normal forms beyond 3NF are mainly of academic interest and are rarely applied in practice due to potential performance issues.
 
-
+<br></br><br></br><br></br>
 # ACID PROPERTIES
-* It stands for Atomicity, Consistency, Isolation and durability
+* It stands for `Atomicity`, `Consistency`, `Isolation` and `durability`
 
 Atomicity: Ensures that a transaction is treated as a single unit . This means that ALL operations within a transaction must be completed successfully for the transaction to be committed.
 * If any part of the transaction fails, the entire transaction is rolled back, leaving the database in a consistent state.
